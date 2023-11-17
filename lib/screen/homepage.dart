@@ -15,13 +15,15 @@ class _Home_PageState extends State<Home_Page> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
-            'user details'.toUpperCase(),
-            softWrap: true,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          title: Center(
+            child: Text(
+              'User'.toUpperCase(),
+              softWrap: true,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           backgroundColor: Colors.teal,
