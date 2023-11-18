@@ -151,7 +151,8 @@ class _User_FormState extends State<User_Form> {
                                  age: controller.age.text.trim(),
                                  occupation: controller.occupation.text.trim(),
                                  mobile_no: controller.mobile_No.text.trim(),
-                                 gmail: controller.gmail!.toString().trim());
+                                 gmail: controller.gmail.toString().trim()
+                            );
                                 controller.user_form(user);
                           },
                           child: Container(

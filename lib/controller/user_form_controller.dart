@@ -16,12 +16,10 @@ class User_Form_Controller extends GetxController{
   final age = TextEditingController();
   final occupation = TextEditingController();
   final mobile_No = TextEditingController();
-  String? gmail;
-  gmail_get(){
-     gmail = _authen_repo.Current_Email();
-  }
- user_form(User_Model user){
+ late String gmail = _authen_repo.Current_Email();
+user_form(User_Model user){
    _user_Repo.firebase_Create_form(user);
  }
+
 
 }
