@@ -17,11 +17,11 @@ class _Home_PageState extends State<Home_Page> {
         appBar: AppBar(
           title: Center(
             child: Text(
-              'User'.toUpperCase(),
+              'information'.toUpperCase(),
               softWrap: true,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 20,
+                fontSize: size.height*.05,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -33,7 +33,59 @@ class _Home_PageState extends State<Home_Page> {
             color: Colors.teal.shade200,
             height: size.height,
             width: size.width,
-            child: SingleChildScrollView(),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  children: [
+                       SizedBox(height: size.height*.2,),
+                       GestureDetector(
+                          child: Container(
+                            height: size.height*.1,
+                            width: size.width*.7,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.teal,
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Personal info'.toUpperCase(),
+                                softWrap: true,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: size.height*.04,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                       ),
+                    SizedBox(height: size.height*.05,),
+                    GestureDetector(
+                      child: Container(
+                        height: size.height*.1,
+                        width: size.width*.7,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.teal,
+                        ),
+                        child: Center(
+                          child: Text(
+                            'All info'.toUpperCase(),
+                            softWrap: true,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: size.height*.04,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ),
       ),
