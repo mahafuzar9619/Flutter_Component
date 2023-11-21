@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_component/screen/all_info.dart';
 import 'package:flutter_component/screen/personal_info.dart';
 import 'package:get/get.dart';
 
@@ -67,6 +68,9 @@ class _Home_PageState extends State<Home_Page> {
                        ),
                     SizedBox(height: size.height*.05,),
                     GestureDetector(
+                      onTap: (){
+                        Get.to(()=> All_Info());
+                      },
                       child: Container(
                         height: size.height*.1,
                         width: size.width*.7,
