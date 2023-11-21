@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_component/model/user_form_model.dart';
+import 'package:flutter_component/model/user_model.dart';
 import 'package:flutter_component/repository/authentication/authentication_repository.dart';
 import 'package:flutter_component/repository/form_repository.dart';
 import 'package:get/get.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_component/controller/user_form_controller.dart';
-import 'package:flutter_component/model/user_form_model.dart';
+import 'package:flutter_component/model/user_model.dart';
 import 'package:get/get.dart';
 
 class User_Form extends StatefulWidget {

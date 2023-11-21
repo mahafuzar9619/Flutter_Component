@@ -1,5 +1,5 @@
 
-import 'package:flutter_component/model/user_form_model.dart';
+import 'package:flutter_component/model/user_model.dart';
 import 'package:flutter_component/screen/login_page.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

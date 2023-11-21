@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class User_Model{
   final String full_name;
   final String age;
@@ -15,4 +17,14 @@ class User_Model{
       "gmail" : gmail,
   };
 }
+factory User_Model.fromSnapshot(DocumentSnapshot<Map<String,dynamic>> document){
+    final data =document.data()!;
+    return User_Model(
+        full_name: data['full_name'],
+        age: data['age'],
+        occupation: data['occupation'],
+        mobile_no: data['mobile_no'],
+        gmail: data['gmail']
+    );
+  }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_component/screen/personal_info.dart';
+import 'package:get/get.dart';
 
 class Home_Page extends StatefulWidget {
   const Home_Page({super.key});
@@ -40,6 +42,9 @@ class _Home_PageState extends State<Home_Page> {
                   children: [
                        SizedBox(height: size.height*.2,),
                        GestureDetector(
+                         onTap: (){
+                           Get.to(()=> Personal_Info());
+                         },
                           child: Container(
                             height: size.height*.1,
                             width: size.width*.7,
