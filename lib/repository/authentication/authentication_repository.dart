@@ -26,7 +26,6 @@ Current_Email(){
   var email = firebaseUser.value?.email;
   return email;
 }
-
 //for signup
 
   Future<void> createUserWithEmailAndPassword(String email, String password) async {
