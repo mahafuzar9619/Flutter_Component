@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_component/controller/all_info_controller.dart';
+import 'package:flutter_component/model/user_model.dart';
 import 'package:get/get.dart';
 
 class All_Info extends StatefulWidget {
@@ -110,7 +111,183 @@ class _All_InfoState extends State<All_Info> {
                                           fontSize: size.height*.02,
                                         ),
                                       ),
-                                      SizedBox(height: size.height*.03,),
+                                      SizedBox(height: size.height*.01,),
+                                      GestureDetector(
+                                        onTap: (){
+                                          User_Model user = snapshot.data![index] as User_Model;
+                                          var full_name = TextEditingController(text: user.full_name);
+                                          var occupation = TextEditingController(text: user.occupation);
+                                          var gmail= TextEditingController(text: user.gmail);
+                                          var mobile_no = TextEditingController(text: user.mobile_no);
+                                          var age = TextEditingController(text: user.age);
+                                          showDialog(
+                                              context: context,
+                                              builder: (context) => AlertDialog(
+                                                backgroundColor: Colors.teal,
+                                                title: Center(
+                                                  child: Text(
+                                                    'Update'.toUpperCase(),
+                                                    softWrap: true,
+                                                    style: TextStyle(
+                                                      fontSize: h*.03,
+                                                      fontWeight: FontWeight.bold,
+                                                      color: Colors.black
+                                                    ),
+                                                  ),
+                                                ),
+                                                content: SizedBox(
+                                                  height: h*.5,
+                                                  width: w*.5,
+                                                  child: Padding(
+                                                    padding: EdgeInsets.all(8),
+                                                    child: Container(
+                                                      height: h,
+                                                      width: w,
+                                                      color: Colors.teal.shade100,
+                                                      child: Padding(
+                                                        padding: EdgeInsets.all(5),
+                                                        child: SingleChildScrollView(
+                                                          child: Column(
+                                                            children: [
+                                                              TextField(
+                                                                controller: full_name,
+                                                                decoration: InputDecoration(
+                                                                  fillColor: Colors.white60,
+                                                                  filled: true,
+                                                                  labelText: 'Full_Name',
+                                                                  border: OutlineInputBorder(
+                                                                    borderRadius: BorderRadius.circular(18),
+                                                                    borderSide: BorderSide(
+                                                                      color: Colors.black,
+                                                                    ),
+                                                                  ),
+                                                                  contentPadding: EdgeInsets.only(left: 10,right: 10),
+                                                                ),
+                                                              ),
+                                                              SizedBox(height: size.height*.01,),
+                                                              TextField(
+                                                                controller: occupation,
+                                                                decoration: InputDecoration(
+                                                                  fillColor: Colors.white60,
+                                                                  filled: true,
+                                                                  labelText: 'Occupation',
+                                                                  border: OutlineInputBorder(
+                                                                    borderRadius: BorderRadius.circular(18),
+                                                                    borderSide: BorderSide(
+                                                                      color: Colors.black,
+                                                                    ),
+                                                                  ),
+                                                                  contentPadding: EdgeInsets.only(left: 10,right: 10),
+
+                                                                ),
+                                                              ),
+                                                              SizedBox(height: size.height*.01,),
+                                                              TextField(
+                                                                controller: gmail,
+                                                                decoration: InputDecoration(
+                                                                  fillColor: Colors.white60,
+                                                                  filled: true,
+                                                                  labelText: 'gmail',
+                                                                  border: OutlineInputBorder(
+                                                                    borderRadius: BorderRadius.circular(18),
+                                                                    borderSide: BorderSide(
+                                                                      color: Colors.black,
+                                                                    ),
+                                                                  ),
+                                                                  contentPadding: EdgeInsets.only(left: 10,right: 10),
+
+                                                                ),
+                                                              ),
+                                                              SizedBox(height: size.height*.01,),
+                                                              TextField(
+                                                                controller: mobile_no,
+                                                                decoration: InputDecoration(
+                                                                  fillColor: Colors.white60,
+                                                                  filled: true,
+                                                                  labelText: 'Mobile_No',
+                                                                  border: OutlineInputBorder(
+                                                                    borderRadius: BorderRadius.circular(18),
+                                                                    borderSide: BorderSide(
+                                                                      color: Colors.black,
+                                                                    ),
+                                                                  ),
+                                                                  contentPadding: EdgeInsets.only(left: 10,right: 10),
+
+                                                                ),
+                                                              ),
+                                                              SizedBox(height: size.height*.01,),
+                                                              TextField(
+                                                                controller: age,
+                                                                decoration: InputDecoration(
+                                                                  fillColor: Colors.white60,
+                                                                  filled: true,
+                                                                  labelText: 'Age',
+                                                                  border: OutlineInputBorder(
+                                                                    borderRadius: BorderRadius.circular(18),
+                                                                    borderSide: BorderSide(
+                                                                      color: Colors.black,
+                                                                    ),
+                                                                  ),
+                                                                  contentPadding: EdgeInsets.only(left: 10,right: 10),
+
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                actions: [
+                                                  GestureDetector(
+                                                    onTap: (){
+                                                      final user = User_Model(
+                                                        full_name: full_name.text.trim(),
+                                                        age: age.text.trim(),
+                                                        occupation: occupation.text.trim(),
+                                                        mobile_no: mobile_no.text.trim(),
+                                                        gmail: gmail.text.trim(),
+                                                      );
+                                                      _allInfocon.UpdateRecord(user);
+                                                    },
+                                                    child: Container(
+                                                      height: size.height*.04,
+                                                      width: size.width*.3,
+                                                      color: Colors.teal.shade100,
+                                                      child: Center(
+                                                        child: Text(
+                                                          'Submit'.toUpperCase(),
+                                                          style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontSize: size.height*.03,
+                                                            fontWeight: FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                          );
+                                        },
+                                        child: Container(
+                                          height: size.height*.03,
+                                          width: size.width*.2,
+                                          color: Colors.red.shade200,
+                                          child: Center(
+                                            child: Text(
+                                              'update'.toUpperCase(),
+                                              softWrap: true,
+                                              style: TextStyle(
+                                                fontSize: size.height*.02,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 )

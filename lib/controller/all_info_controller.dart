@@ -9,4 +9,8 @@ class All_Info_Controller extends GetxController{
   Future<List<User_Model>> getAllUserdata() async{
     return await _AllInfo_repo.getAllUser_Data();
   }
+
+  UpdateRecord(User_Model user){
+    _AllInfo_repo.allvalueupdate(user);
+  }
 }

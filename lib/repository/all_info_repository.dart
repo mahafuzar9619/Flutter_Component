@@ -12,4 +12,10 @@ class All_Info_Repository extends GetxController{
     final userdata = snapshot.docs.map((e) => User_Model.fromSnapshot(e)).toList();
     return userdata;
   }
+  //for value update
+Future  allvalueupdate(User_Model user) async{
+    final snapshot = await _db.collection("User_Form").where('gmail' ,isEqualTo: user.gmail).get();
+    var id = snapshot.docs.first.id;
+    await _db.collection("User_Form").doc(id).update(user.toJson()).then((value) => Get.back());
+}
 }
