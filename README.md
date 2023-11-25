@@ -1,16 +1,11 @@
-# flutter_component
+# flutter_component project
 
-A new Flutter project.
+This project i use some component of flutter
 
-## Getting Started
+# Here i used
 
-This project is a starting point for a Flutter application.
+-> Authentication SingUp & Sign-in
+-> Firebase Firestore Integration (Data Set,Update,Delete,Fetch)
+-> Rest Api Integration
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
